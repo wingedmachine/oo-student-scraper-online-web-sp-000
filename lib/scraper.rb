@@ -15,7 +15,6 @@ class Scraper
     binding.pry
   end
 
-  def parse
   def self.scrape_profile_page(profile_url)
 
   end
