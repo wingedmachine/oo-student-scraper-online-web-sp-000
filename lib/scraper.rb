@@ -11,7 +11,7 @@ class Scraper
     students.map { |student| Student.new(student) }
   end
 
-  def parse_student_card(student_card)
+  def self.parse_student_card(student_card)
     binding.pry
   end
 
