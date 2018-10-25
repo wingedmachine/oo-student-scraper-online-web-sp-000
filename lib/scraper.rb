@@ -11,8 +11,7 @@ class Scraper
   end
 
   def self.parse_student_card(student)
-    {
-      name: student.css("h4.student-name").text,
+    { name: student.css("h4.student-name").text,
       location: student.css("p.student-location").text,
       profile_url: student.css("a").first["href"]
     }
