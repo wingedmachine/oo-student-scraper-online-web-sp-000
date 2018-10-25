@@ -8,8 +8,6 @@ class Scraper
 
     students = [Nokogiri::HTML(open(index_url)).css("div.student-card").first]
     students = students.map { |student| parse_student_card(student) }
-    binding.pry
-    students.map { |student| Student.new(student) }
   end
 
   def self.parse_student_card(student)
