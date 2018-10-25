@@ -7,7 +7,7 @@ class Scraper
   def self.scrape_index_page(index_url)
 
     students = [Nokogiri::HTML(open(index_url)).css("div.student-card").first]
-    students = student_cards.map { |student| parse_student_card(student) }
+    students = students.map { |student| parse_student_card(student) }
     students.map { |student| Student.new(student) }
   end
 
