@@ -5,7 +5,6 @@ require 'pry'
 class Scraper
 
   def self.scrape_index_page(index_url)
-
     students = Nokogiri::HTML(open(index_url)).css("div.student-card")
     students.map { |student| parse_student_card(student) }
   end
@@ -18,7 +17,14 @@ class Scraper
   end
 
   def self.scrape_profile_page(profile_url)
-    {}
+    profile = Nokogiri::HTML(open(index_url)).css("div.student-card")
+    socials = profile.css("div.social-icon-container > a")
+    { twitter: socials[0],
+      linkedin: socials[1],
+      github: socials[2],
+      blog: ,
+      profile_quote: profile.css("div.profile-quote").text,
+      bio: profile.css("div.description-holder > p").text
+    }
   end
-
 end
