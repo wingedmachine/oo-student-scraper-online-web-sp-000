@@ -12,7 +12,7 @@ class Scraper
   end
 
   def parse_student_card(student_card)
-    pry
+    binding.pry
   end
 
   def parse
