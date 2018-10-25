@@ -19,7 +19,6 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     profile = Nokogiri::HTML(open(profile_url))
     socials = profile.css("div.social-icon-container > a")
-    binding.pry
     { twitter: socials[0],
       linkedin: socials[1],
       github: socials[2],
