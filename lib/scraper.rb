@@ -22,7 +22,7 @@ class Scraper
     { twitter: socials[0],
       linkedin: socials[1],
       github: socials[2],
-      blog: ,
+      blog: "",
       profile_quote: profile.css("div.profile-quote").text,
       bio: profile.css("div.description-holder > p").text
     }
